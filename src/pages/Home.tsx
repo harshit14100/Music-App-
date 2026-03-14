@@ -44,9 +44,16 @@ const Home = () => {
         </div>
         </div>
       </div>
-      <div className='w-[50%] h-full bg-zinc-800 flex flex-col items-center pt-25 justify-center'>
-        <div>
-          <Card/>
+      <div className='w-[50%] h-full  bg-zinc-800 flex flex-col items-center pt-25 justify-center'>
+        <div className="gap-6 overflow-y-auto h-full py-5 pr-4 no-scrollbar flex flex-col">
+          {songsData.map((song,index)=>{
+            return <Card
+            key={index}
+            name={song.name}
+            image={song.image}
+            singer={song.singer}
+            songIndex={index}/>
+          })}
         </div>
       </div>
     </div>
